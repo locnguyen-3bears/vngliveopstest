@@ -46,9 +46,10 @@ type SidebarProps = {
   mini?: boolean;
   onNavigate?: (id: SidebarRoute) => void;
   onToggleMini?: () => void;
+  viewport?: boolean;
 };
 
-export function Sidebar({ activeId = "dashboard", includeComponents = false, mini = false, onNavigate, onToggleMini }: SidebarProps) {
+export function Sidebar({ activeId = "dashboard", includeComponents = false, mini = false, onNavigate, onToggleMini, viewport = false }: SidebarProps) {
   const [isMini, setIsMini] = useState(mini);
 
   useEffect(() => {
@@ -74,6 +75,7 @@ export function Sidebar({ activeId = "dashboard", includeComponents = false, min
     <aside
       className={cn(
         "relative flex min-h-full shrink-0 flex-col justify-between bg-[var(--ads-sidebar-bg)] py-[var(--ads-spacing-6)] transition-[width] duration-200 ease-out",
+        viewport && "sticky top-0 h-screen min-h-screen",
         isMini ? "w-[56px] items-center border border-[var(--ads-surface-dark-card)]" : "w-[220px] items-start",
       )}
     >

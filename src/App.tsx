@@ -34,7 +34,7 @@ export default function App() {
   if (activePage === "components") {
     return (
       <div className="flex min-h-screen">
-        <Sidebar activeId="components" includeComponents onNavigate={setActivePage} />
+        <Sidebar activeId="components" includeComponents viewport onNavigate={setActivePage} />
         <ComponentReview />
       </div>
     );

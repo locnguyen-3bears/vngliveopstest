@@ -44,7 +44,7 @@ const routeTitles: Record<Exclude<SidebarRoute, "components">, string> = {
 function ProductShell({ activeId, children, onNavigate }: ProductPageProps & { children: ReactNode }) {
   return (
     <div className="flex min-h-screen bg-[var(--ads-background-subtle)]">
-        <Sidebar activeId={activeId} mini onNavigate={onNavigate} />
+      <Sidebar activeId={activeId} mini viewport onNavigate={onNavigate} />
       <main className="min-w-0 flex-1 overflow-auto">
         {children}
       </main>
